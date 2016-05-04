@@ -61,7 +61,7 @@
 
                 <TextBlock x:Name="KonstruktionBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Konstruktionsskader" VerticalAlignment="Top" Margin="600, 350,0,0" Width="150" FontWeight="Bold"/>
                 <CheckBox x:Name="SkulpturCheckKS" Content="      Skulptur" VerticalAlignment="Top" Margin="600, 380,0,0"/>
-                <CheckBox x:Name="SokkelCheckKS" Content="      Sokkel" VerticalAlignment="Top" Margin="600,410,0,0"/>
+                <CheckBox x:Name="SokkelCheckKS" Content="      Sokkel" VerticalAlignment="Top" Margin="600,407,0,0"/>
                 <CheckBox x:Name="ReliefCheckKS" Content="      Relief" VerticalAlignment="Top" Margin="600,440,0,0"/>
                 <CheckBox x:Name="VandkunstCheckKS" Content="      Vandkunst" VerticalAlignment="Top" Margin="600,470,0,0"/>
 
@@ -95,7 +95,12 @@
                 <CheckBox x:Name="ReliefCheckAS" Content="      Relief" VerticalAlignment="Top" Margin="850,640,0,0"/>
                 <CheckBox x:Name="VandkunstCheckAS" Content="      Vandkunst" VerticalAlignment="Top" Margin="850,670,0,0"/>
 
-                <Button x:Name="OpretSkadeButton" Content="Opret Skade" VerticalAlignment="Top" Height="60" Width="200"  Margin="80,780,0,0" FontSize="18.667"/>
+                <TextBlock x:Name="OverskriftBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Overskrift" VerticalAlignment="Top" Margin="100, 750,0,0" Width="100" FontWeight="Bold"/>
+                <TextBox x:Name="OverskriftBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="100, 800, 0,0" Width="280"/>
+                <DatePicker x:Name="DatoBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400, 800, 0,0" Width="80" />
+
+                <TextBox x:Name="RapportBox" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Margin="100, 850, 0,0" Width="800" Height="300"/>
+                <Button x:Name="OpretSkadeButton" Content="Opret Skade" VerticalAlignment="Top" Height="60" Width="200"  Margin="100,1200,0,0" FontSize="18.667"/>
                 <Image x:Name="little_mermaid_faded_png" Source="little_mermaid_faded.png" Stretch="Fill" Margin="0,-35,-22,0" HorizontalAlignment="Right" Width="330" Height="385" VerticalAlignment="Top"/>
             </Grid>
 
