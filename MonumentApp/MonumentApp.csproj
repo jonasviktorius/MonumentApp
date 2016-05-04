@@ -98,6 +98,9 @@
     </Compile>
     <Compile Include="Model\Monument.cs" />
     <Compile Include="Model\Skade.cs" />
+    <Compile Include="Pages\BehandlingsPage.xaml.cs">
+      <DependentUpon>BehandlingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\BehandlingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
