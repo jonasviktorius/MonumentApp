@@ -17,7 +17,7 @@ namespace MonumentApp
             vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Forside", PageType = typeof(WelcomePage) });
             vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Opret Monument", PageType = typeof(OpretMonumentPage) });
             vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Monument", PageType = typeof(MonumentPage) });
-            vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Page 3", PageType = typeof(Page3) });
+            vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Opret Skade", PageType = typeof(SkadePage) });
 
             vm.BottomItems.Add(new NavigationItem { Icon = "", DisplayName = "Indstillinger", PageType = typeof(SettingsPage) });
 
