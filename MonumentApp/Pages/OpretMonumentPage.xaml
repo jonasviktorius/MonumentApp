@@ -8,15 +8,15 @@
     mc:Ignorable="d">
 
     <Page.Background>
-        
+
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="0"/>
             <GradientStop Color="#FFFB4848" Offset="1"/>
         </LinearGradientBrush>
     </Page.Background>
-    
-    <Grid>
-        
+
+    <Grid Margin="0">
+
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FFC0D4BB"/>
@@ -24,9 +24,9 @@
                 <GradientStop Color="#FFD0DAC6" Offset="0.518"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ScrollViewer Padding="{x:Bind Frame.Padding, Mode=OneWay}">
-            
-            <Grid>
+        <ScrollViewer Padding="{x:Bind Frame.Padding, Mode=OneWay}" Margin="0">
+
+            <Grid Height="1325">
                 <TextBlock x:Name="textBlock" Height="110" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Opret nyt monument" Width="430" FontWeight="Bold" FontSize="22.667" Margin="80, 30,0,0">
                     <TextBlock.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -56,11 +56,11 @@
                 <CheckBox x:Name="SokkelCheck" Content="      Sokkel" VerticalAlignment="Top" Margin="325,370,0,0"/>
                 <CheckBox x:Name="ReliefCheck" Content="      Relief" VerticalAlignment="Top" Margin="325,400,0,0"/>
                 <CheckBox x:Name="VandkunstCheck" Content="      Vandkunst" VerticalAlignment="Top" Margin="325,430,0,0"/>
-                <TextBlock x:Name="BevaringsVærdigBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bevaringsværdig" VerticalAlignment="Top" Margin="550, 310, 0,0" FontWeight="Bold"/>
-                <CheckBox x:Name="MegetBVCheck" Content="      Meget bevaringsværdig" VerticalAlignment="Top" Margin="550, 340, 0,0"/>
-                <CheckBox x:Name="BVCheck" Content="      Bevaringsværdig" VerticalAlignment="Top" Margin="550, 370, 0,0 " />
-                <CheckBox x:Name="MindreBVCheck" Content="      Mindre bevaringsværdig" VerticalAlignment="Top" Margin="550, 400, 0,0 " />
-                <TextBlock x:Name="MaterialeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Materiale" VerticalAlignment="Top" Margin="437, 490, 0, 0" FontWeight="Bold"/>
+                <TextBlock x:Name="BevaringsVærdigBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bevaringsværdig" VerticalAlignment="Top" Margin="582,310,0,0" FontWeight="Bold"/>
+                <CheckBox x:Name="MegetBVCheck" Content="      Meget bevaringsværdig" VerticalAlignment="Top" Margin="580,335,0,0"/>
+                <CheckBox x:Name="BVCheck" Content="      Bevaringsværdig" VerticalAlignment="Top" Margin="580,367,0,0" />
+                <CheckBox x:Name="MindreBVCheck" Content="      Mindre bevaringsværdig" VerticalAlignment="Top" Margin="580,402,0,0" />
+                <TextBlock x:Name="MaterialeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Materiale" VerticalAlignment="Top" Margin="79,490,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="StenBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sten" VerticalAlignment="Top" Margin="80,550,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="MetalBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Metal" VerticalAlignment="Top" Margin="330, 550, 0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="AndetBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Andet" VerticalAlignment="Top" Margin="580, 550, 0,0" FontWeight="Bold"/>
@@ -79,11 +79,14 @@
                 <CheckBox x:Name="BetonCheck" Content="      Beton" VerticalAlignment="Top" Margin="580, 640,0,0"/>
                 <CheckBox x:Name="AndetMaterialeCheck" Content="      Andet Materiale" VerticalAlignment="Top" Margin="580, 670,0,0"/>
 
-                <Button x:Name="OpretMonumentButton" Content="Opret monument" VerticalAlignment="Top" Height="60" Width="200"  Margin="80,780,0,0" FontSize="18.667"/>
+                <Button x:Name="OpretMonumentButton" Content="Opret monument" VerticalAlignment="Top" Height="60" Width="200"  Margin="80,1173,0,0" FontSize="18.667"/>
                 <Image x:Name="little_mermaid_faded_png" Source="little_mermaid_faded.png" Stretch="Fill" Margin="0,-35,-22,0" HorizontalAlignment="Right" Width="330" Height="385" VerticalAlignment="Top"/>
+                <TextBlock x:Name="NoteBlock" HorizontalAlignment="Left" Margin="80,0,0,511" TextWrapping="Wrap" Text="Note" VerticalAlignment="Bottom" FontWeight="Bold"/>
+                <TextBox x:Name="NoteOpretMonument" Margin="79,0,400,200" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="300"/>
+                <Button x:Name="OpdaterNote" Content="Opdater" HorizontalAlignment="Right" Margin="0,0,400,150" VerticalAlignment="Bottom"/>
             </Grid>
 
         </ScrollViewer>
     </Grid>
-    
+
 </Page>
