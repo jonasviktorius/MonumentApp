@@ -24,7 +24,7 @@
                 <GradientStop Color="#FFD0DAC6" Offset="0.518"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ScrollViewer Padding="{x:Bind Frame.Padding, Mode=OneWay}">
+        <ScrollViewer Padding="{x:Bind Frame.Padding, Mode=OneWay}" Margin="30,-145,-30,145">
             
             <Grid>
                 <TextBlock x:Name="textBlock" Height="110" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Opret nyt monument" Width="430" FontWeight="Bold" FontSize="22.667" Margin="80, 30,0,0">

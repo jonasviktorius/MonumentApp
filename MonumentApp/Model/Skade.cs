@@ -13,5 +13,17 @@ namespace MonumentApp.Model
         public string PlaceringsId { get; set; } //FK
         public string GlobalId { get; set; } //PK
 
+        public Skade(string skadeId, string type, string placeringsId, string globalId)
+        {
+            SkadeId = skadeId;
+            Type = type;
+            PlaceringsId = placeringsId;
+            GlobalId = globalId;
+        }
+
+        public override string ToString()
+        {
+            return $"SkadeId: {SkadeId}, Type: {Type}, PlaceringsId: {PlaceringsId}, GlobalId: {GlobalId}";
+        }
     }
 }

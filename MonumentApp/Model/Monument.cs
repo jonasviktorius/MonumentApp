@@ -12,19 +12,21 @@ namespace MonumentApp.Model
         public string Navn { get; set; }
         public string Adresse { get; set; }
         public int PostNr { get; set; }
+        public string Note { get; set; }
+        public string Bevaringsværdig { get; set; }
 
 
-        public Monument(string globalId, string navn, string adresse, int postNr)
+        public Monument(string globalId, string navn, string adresse, string bevaringsværdig)
         {
             GlobalId = globalId;
             Navn = navn;
             Adresse = adresse;
-            PostNr = postNr;
+            Bevaringsværdig = bevaringsværdig;
         }
 
         public override string ToString()
         {
-            return $"GlobalId: {GlobalId}, Navn: {Navn}, Adresse: {Adresse}, PostNr: {PostNr}";
+            return $"GlobalId: {GlobalId}, Navn: {Navn}, Adresse: {Adresse}, Bevaringsværdig: {Bevaringsværdig}";
         }
     }
 }
