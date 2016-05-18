@@ -6,7 +6,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using MonumentApp.Model;
+using Newtonsoft.Json;
 
 namespace MonumentApp.Persistency
 {
@@ -34,13 +36,20 @@ namespace MonumentApp.Persistency
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var monumentList = response.Content.ReadAsAsync<IEnumerable<Monument>>().Result;
-                        return monumentList.toList();
+                        string monumentListJson = response.Content.ReadAsStringAsync().Result;
+                        IEnumerable<Monument> monumentList = JsonConvert.DeserializeObject<IEnumerable<Monument>>(monumentListJson);
+                        return monumentList;
                     }
 
                 }
+                catch (Exception ex)
+                {
+                    new MessageDialog(ex.Message);
+                }
+                return null;
 
             }
+
         }
     }
 }
