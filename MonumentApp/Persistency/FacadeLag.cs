@@ -37,7 +37,8 @@ namespace MonumentApp.Persistency
                     if (response.IsSuccessStatusCode)
                     {
                         string monumentListJson = response.Content.ReadAsStringAsync().Result;
-                        IEnumerable<Monument> monumentList = JsonConvert.DeserializeObject<IEnumerable<Monument>>(monumentListJson);
+                        IEnumerable<Monument> monumentList =
+                            JsonConvert.DeserializeObject<IEnumerable<Monument>>(monumentListJson);
                         return monumentList;
                     }
 
@@ -48,6 +49,28 @@ namespace MonumentApp.Persistency
                 }
                 return null;
 
+            }
+
+        }
+
+        public void SaveMonument(Monument monument)
+        {
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri("100metergruppen.database.windows.net");
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    string postBody = JsonConvert.SerializeObject(monument);
+                    var response =
+                        client.PostAsync("api/Monumenter",
+                            new StringContent(postBody, Encoding.UTF8, "application/json")).Result;
+                }
+                catch (Exception ex)
+                {
+                    new MessageDialog(ex.Message).ShowAsync();
+                }
             }
 
         }

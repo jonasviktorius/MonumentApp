@@ -8,22 +8,20 @@ namespace MonumentApp.Model
 {
     class Skade
     {
-        public string SkadeId { get; set; }
-        public string Type { get; set; }
-        public string PlaceringsId { get; set; } //FK
-        public string GlobalId { get; set; } //PK
+        public string Skade_Id { get; set; }
+        public string SkadeType_Id { get; set; }
+        public bool ErSkadenUdbedret { get; set; }
 
-        public Skade(string skadeId, string type, string placeringsId, string globalId)
+        public Skade(string skadeId, string globalId, string skadeTypeId, bool erSkadenUdbedret)
         {
-            SkadeId = skadeId;
-            Type = type;
-            PlaceringsId = placeringsId;
-            GlobalId = globalId;
+            Skade_Id = skadeId;
+            SkadeType_Id = skadeTypeId;
+            ErSkadenUdbedret = erSkadenUdbedret;
         }
 
         public override string ToString()
         {
-            return $"SkadeId: {SkadeId}, Type: {Type}, PlaceringsId: {PlaceringsId}, GlobalId: {GlobalId}";
+            return $"Skade_Id: {Skade_Id}, SkadeType_Id: {SkadeType_Id}, ErSkadenUdbedret: {ErSkadenUdbedret}";
         }
     }
 }

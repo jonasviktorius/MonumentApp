@@ -54,7 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context.cs" />
+    <Compile Include="MaterialeOversigt.cs" />
+    <Compile Include="MaterialeTyper.cs" />
+    <Compile Include="MonumentOversigt.cs" />
+    <Compile Include="MonumentTypeOversigt.cs" />
+    <Compile Include="MonumentTyper.cs" />
+    <Compile Include="PlaceringsOversigt.cs" />
+    <Compile Include="PlaceringsTyper.cs" />
+    <Compile Include="PostNrTabel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SkadeOversigt.cs" />
+    <Compile Include="SkadeTyper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

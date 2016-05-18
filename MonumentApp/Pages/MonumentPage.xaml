@@ -47,15 +47,15 @@
                 <CheckBox x:Name="JordCheckBox" Content="      Jord" VerticalAlignment="Top" Margin="80,340,0,0"/>
                 <CheckBox x:Name="BygningCheckBox" Content="      Bygning" VerticalAlignment="Top" Margin="80,370,0,0"/>
                 <CheckBox x:Name="FacadeCheckBox" Content="      Facade" VerticalAlignment="Top" Margin="80,400,0,0"/>
-                <TextBlock x:Name="TypeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Margin="325,310,0,0" FontWeight="Bold"/>
+                <TextBlock x:Name="TypeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="SkadeType_Id" VerticalAlignment="Top" Margin="325,310,0,0" FontWeight="Bold"/>
                 <CheckBox x:Name="SkulpturCheck" Content="      Skulptur" VerticalAlignment="Top" Margin="325,340,0,0"/>
                 <CheckBox x:Name="SokkelCheck" Content="      Sokkel" VerticalAlignment="Top" Margin="325,370,0,0"/>
                 <CheckBox x:Name="ReliefCheck" Content="      Relief" VerticalAlignment="Top" Margin="325,400,0,0"/>
                 <CheckBox x:Name="VandkunstCheck" Content="      Vandkunst" VerticalAlignment="Top" Margin="325,430,0,0"/>
-                <TextBlock x:Name="BevaringsVærdigBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bevaringsværdig" VerticalAlignment="Top" Margin="550, 310, 0,0" FontWeight="Bold"/>
-                <CheckBox x:Name="MegetBVCheck" Content="      Meget bevaringsværdig" VerticalAlignment="Top" Margin="550, 340, 0,0"/>
-                <CheckBox x:Name="BVCheck" Content="      Bevaringsværdig" VerticalAlignment="Top" Margin="550, 370, 0,0 " />
-                <CheckBox x:Name="MindreBVCheck" Content="      Mindre bevaringsværdig" VerticalAlignment="Top" Margin="550, 400, 0,0 " />
+                <TextBlock x:Name="BevaringsVærdigBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bevaringsværdi" VerticalAlignment="Top" Margin="550, 310, 0,0" FontWeight="Bold"/>
+                <CheckBox x:Name="MegetBVCheck" Content="      Meget Bevaringsværdi" VerticalAlignment="Top" Margin="550, 340, 0,0"/>
+                <CheckBox x:Name="BVCheck" Content="      Bevaringsværdi" VerticalAlignment="Top" Margin="550, 370, 0,0 " />
+                <CheckBox x:Name="MindreBVCheck" Content="      Mindre Bevaringsværdi" VerticalAlignment="Top" Margin="550, 400, 0,0 " />
                 <TextBlock x:Name="MaterialeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Materiale" VerticalAlignment="Top" Margin="80,485,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="StenBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sten" VerticalAlignment="Top" Margin="80,550,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="MetalBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Metal" VerticalAlignment="Top" Margin="330, 550, 0,0" FontWeight="Bold"/>
