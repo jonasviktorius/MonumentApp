@@ -97,13 +97,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Monument.cs" />
-    <Compile Include="Model\MonumentSingleton.cs" />
     <Compile Include="Model\Skade.cs" />
     <Compile Include="Pages\BehandlingsPage.xaml.cs">
       <DependentUpon>BehandlingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Persistency\FacadeLag.cs" />
-    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
@@ -126,7 +123,6 @@
     <Compile Include="Presentation\DisplayableTheme.cs" />
     <Compile Include="Presentation\SettingsViewModel.cs" />
     <Compile Include="Presentation\ShellViewModel.cs" />
-    <Compile Include="ViewModel\MonumentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -186,7 +182,9 @@
       <Name>Microsoft Mobile Extension SDK for Universal App Platform</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
