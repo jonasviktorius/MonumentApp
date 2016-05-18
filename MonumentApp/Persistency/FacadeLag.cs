@@ -30,26 +30,26 @@ namespace MonumentApp.Persistency
                 client.BaseAddress = new Uri(ServerUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
                 try
                 {
                     var response = client.GetAsync("api/Monumenter").Result;
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var monumentListJson = response.Content.ReadAsStringAsync()IEnumerable<Monument>.Result;
+                        string monumentListJson = response.Content.ReadAsStringAsync().Result;
                         IEnumerable<Monument> monumentList = JsonConvert.DeserializeObject<IEnumerable<Monument>>(monumentListJson);
                         return monumentList;
                     }
-                 }
-                        catch (Exception ex)
+
+                }
+                catch (Exception ex)
                 {
-                        new MessageDialog(ex.Message);
-            }
-            return null;
+                    new MessageDialog(ex.Message);
+                }
+                return null;
+
             }
 
-        }
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MonumentApp.Model;
 using MonumentApp.ViewModel;
 
 namespace MonumentApp.Handler
@@ -18,7 +19,8 @@ namespace MonumentApp.Handler
 
         public void OpretMonument()
         {
-            
+            Monument monument = new Monument();
+            monument.
         }
     }
 }

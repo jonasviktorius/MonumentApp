@@ -15,7 +15,10 @@ namespace MonumentApp.Model
         public string Note { get; set; }
         public string Bevaringsværdig { get; set; }
 
-
+        public Monument()
+        {
+            
+        }
         public Monument(string globalId, string navn, string adresse, string bevaringsværdig)
         {
             GlobalId = globalId;
@@ -23,6 +26,7 @@ namespace MonumentApp.Model
             Adresse = adresse;
             Bevaringsværdig = bevaringsværdig;
         }
+        
 
         public override string ToString()
         {
