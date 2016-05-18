@@ -20,7 +20,7 @@ namespace MonumentApp.Handler
         public void OpretMonument()
         {
             Monument monument = new Monument();
-            monument.
+            
         }
     }
 }
