@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonumentApp.Model
 {
-    class Monument
+    class Monument : Placering
     {
         public string Navn { get; set; }
         public string Adresse { get; set; }

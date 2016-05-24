@@ -1,11 +1,12 @@
 ﻿<Page
-    x:Class="MonumentApp.Pages.OpretMonumentPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MonumentApp.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:ViewModel="using:MonumentApp.ViewModel"
+    x:Class="MonumentApp.Pages.OpretMonumentPage"
+    mc:Ignorable="d" Height="1420">
 
     <Page.Background>
 
@@ -15,7 +16,7 @@
         </LinearGradientBrush>
     </Page.Background>
 
-    <Grid Margin="0">
+    <Grid Margin="0,0,0,630">
 
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -25,8 +26,10 @@
             </LinearGradientBrush>
         </Grid.Background>
         <ScrollViewer Padding="{x:Bind Frame.Padding, Mode=OneWay}" Margin="0">
+         
 
             <Grid Height="1325">
+                
                 <TextBlock x:Name="textBlock" Height="110" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Opret nyt monument" Width="430" FontWeight="Bold" FontSize="22.667" Margin="80, 30,0,0">
                     <TextBlock.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -38,20 +41,20 @@
                 </TextBlock>
 
                 <TextBlock x:Name="NavnBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Navn på monument" VerticalAlignment="Top" FontSize="16" Margin="80,120,0,0"/>
-                <TextBox x:Name="NavnBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="80,155,0,0" Width="450"/>
+                <TextBox x:Name="NavnBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonument.Navn, Mode=TwoWay}" VerticalAlignment="Top" Margin="80,155,0,0" Width="450"/>
                 <TextBlock x:Name="NummerBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Monument Nummer" VerticalAlignment="Top" Margin="550,120,0,0"/>
                 <TextBox x:Name="NummerBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="550,155,0,0" Width="50"/>
                 <TextBlock x:Name="AdresseBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Margin="80,220,0,0"/>
-                <TextBox x:Name="AdresseBox1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="80,255,0,0" Width="450"/>
+                <TextBox x:Name="AdresseBox1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonument.Adresse, Mode=TwoWay}" VerticalAlignment="Top" Margin="80,255,0,0" Width="450"/>
                 <TextBlock x:Name="PostNrBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Post Nr." VerticalAlignment="Top" Margin="550, 220, 0,0" Width="70"/>
-                <TextBox x:Name="PostNrBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="550, 255, 0, 0" Width="50"/>
+                <TextBox x:Name="PostNrBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonument.PostNr, Mode=TwoWay}" VerticalAlignment="Top" Margin="550, 255, 0, 0" Width="50"/>
                 <TextBlock x:Name="PlaceringsBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Placering" VerticalAlignment="Top" Margin="80,310,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="ByBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="By" VerticalAlignment="Top" Margin="640, 220, 0,0" Width="150"/>
                 <TextBox x:Name="ByBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="640, 255, 0,0" Width="150"/>
                 <CheckBox x:Name="JordCheckBox" Content="      Jord" VerticalAlignment="Top" Margin="80,340,0,0"/>
                 <CheckBox x:Name="BygningCheckBox" Content="      Bygning" VerticalAlignment="Top" Margin="80,370,0,0"/>
                 <CheckBox x:Name="FacadeCheckBox" Content="      Facade" VerticalAlignment="Top" Margin="80,400,0,0"/>
-                <TextBlock x:Name="TypeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="SkadeType_Id" VerticalAlignment="Top" Margin="325,310,0,0" FontWeight="Bold"/>
+                <TextBlock x:Name="TypeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Margin="325,310,0,0" FontWeight="Bold"/>
                 <CheckBox x:Name="SkulpturCheck" Content="      Skulptur" VerticalAlignment="Top" Margin="325,340,0,0"/>
                 <CheckBox x:Name="SokkelCheck" Content="      Sokkel" VerticalAlignment="Top" Margin="325,370,0,0"/>
                 <CheckBox x:Name="ReliefCheck" Content="      Relief" VerticalAlignment="Top" Margin="325,400,0,0"/>
@@ -79,7 +82,7 @@
                 <CheckBox x:Name="BetonCheck" Content="      Beton" VerticalAlignment="Top" Margin="580, 640,0,0"/>
                 <CheckBox x:Name="AndetMaterialeCheck" Content="      Andet Materiale" VerticalAlignment="Top" Margin="580, 670,0,0"/>
 
-                <Button x:Name="OpretMonumentButton" Content="Opret monument" VerticalAlignment="Top" Height="60" Width="200"  Margin="80,1173,0,0" FontSize="18.667"/>
+                <Button x:Name="OpretMonumentButton" Content="Opret monument" VerticalAlignment="Top" Height="60" Width="200"  Margin="80,1173,0,0" FontSize="18.667" ClickMode="{Binding NytMonument}"/>
                 <Image x:Name="little_mermaid_faded_png" Source="little_mermaid_faded.png" Stretch="Fill" Margin="0,-35,-22,0" HorizontalAlignment="Right" Width="330" Height="385" VerticalAlignment="Top"/>
                 <TextBlock x:Name="NoteBlock" HorizontalAlignment="Left" Margin="80,0,0,511" TextWrapping="Wrap" Text="Note" VerticalAlignment="Bottom" FontWeight="Bold"/>
                 <TextBox x:Name="NoteOpretMonument" Margin="79,0,400,200" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="300"/>

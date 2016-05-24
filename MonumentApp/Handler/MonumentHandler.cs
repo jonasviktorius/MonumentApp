@@ -26,8 +26,9 @@ namespace MonumentApp.Handler
 
         public void OpretMonument()
         {
-            Monument monument = new Monument();
+            Monument monument = new Monument(); 
            
+            
             monument.Navn = MonumentViewModel.NytMonument.Navn;
             monument.Adresse = MonumentViewModel.NytMonument.Adresse;
             monument.Bevaringsværdi = MonumentViewModel.NytMonument.Bevaringsværdi;

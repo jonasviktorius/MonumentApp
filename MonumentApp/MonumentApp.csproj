@@ -100,6 +100,7 @@
     <Compile Include="Handler\MonumentHandler.cs" />
     <Compile Include="Model\Monument.cs" />
     <Compile Include="Model\MonumentSingleton.cs" />
+    <Compile Include="Model\Placering.cs" />
     <Compile Include="Model\Skade.cs" />
     <Compile Include="Pages\BehandlingsPage.xaml.cs">
       <DependentUpon>BehandlingsPage.xaml</DependentUpon>
