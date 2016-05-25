@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MonumentApp.Model
 {
-    class Skade
+    public partial class SkadeOversigt
     {
-        public string Skade_Id { get; set; }
-        public string SkadeType_Id { get; set; }
+        [Key]
+        public int Skade_Id { get; set; }
+
+        public int Global_Id { get; set; }
+
+        public int SkadeType_Id { get; set; }
+
         public bool ErSkadenUdbedret { get; set; }
 
-        public Skade(string skadeId, string globalId, string skadeTypeId, bool erSkadenUdbedret)
-        {
-            Skade_Id = skadeId;
-            SkadeType_Id = skadeTypeId;
-            ErSkadenUdbedret = erSkadenUdbedret;
-        }
+        public virtual MonumentOversigt MonumentOversigt { get; set; }
 
-        public override string ToString()
-        {
-            return $"Skade_Id: {Skade_Id}, SkadeType_Id: {SkadeType_Id}, ErSkadenUdbedret: {ErSkadenUdbedret}";
-        }
+        public virtual SkadeTyper SkadeTyper { get; set; }
     }
 }

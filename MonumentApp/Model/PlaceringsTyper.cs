@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace MonumentApp.Model
 {
-    class Placering 
+    public  class PlaceringsTyper 
     {
         public bool Jord { get; set; }
         public bool Bygning { get; set; }
         public bool Facade { get; set; }
 
-        public Placering(bool jord, bool bygning, bool facade)
+        public PlaceringsTyper(bool jord, bool bygning, bool facade)
         {
             Jord = jord;
             Bygning = bygning;
             Facade = facade;
         }
 
-        public Placering()
+        public PlaceringsTyper()
         {
             
         }

@@ -9,8 +9,7 @@ namespace WebService
     [Table("PostNrTabel")]
     public partial class PostNrTabel
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PostNrTabel()
+         public PostNrTabel()
         {
             MonumentOversigt = new HashSet<MonumentOversigt>();
         }
@@ -22,7 +21,6 @@ namespace WebService
         [StringLength(250)]
         public string ByNavn { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MonumentOversigt> MonumentOversigt { get; set; }
+         public virtual ICollection<MonumentOversigt> MonumentOversigt { get; set; }
     }
 }

@@ -13,40 +13,39 @@ using Newtonsoft.Json;
 
 namespace MonumentApp.Handler
 {
-    class MonumentHandler
+    public class MonumentHandler
     {
-   
 
-        public MonumentViewModel MonumentViewModel { get; set; }
 
-        public MonumentHandler(MonumentViewModel monumentViewModel)
+        public MonumentSingleton MonumentSingleton => MonumentSingleton.Instance;
+
+        public MonumentHandler()
         {
-            MonumentViewModel = monumentViewModel;
         }
 
         public void OpretMonument()
         {
-            Monument monument = new Monument(); 
-           
-            
-            monument.Navn = MonumentViewModel.NytMonument.Navn;
-            monument.Adresse = MonumentViewModel.NytMonument.Adresse;
-            monument.Bevaringsværdi = MonumentViewModel.NytMonument.Bevaringsværdi;
-            new FacadeLag().SaveMonument(monument);
+      
+            FacadeLag facade = new FacadeLag();
+           facade.SaveMonument(StaticObjects.SelectedMonumenter);
+            facade.SavePlacering(StaticObjects.SelectedPlaceringsTyper);
 
-            var monumenter = new FacadeLag().GetMonumenter();
 
-            MonumentViewModel.MonumentSingleton.Monumenter.Clear();
-            foreach (var monument1 in monumenter)
-            {
-                MonumentViewModel.MonumentSingleton.Monumenter.Add(monument1);
-            }
 
-            MonumentViewModel.NytMonument.Navn = "";
-            MonumentViewModel.NytMonument.Adresse = "";
-            MonumentViewModel.NytMonument.Bevaringsværdi = "";
+
+
+            //var monumenter = new FacadeLag().GetMonumenter();
+
+            //MonumentSingleton.Monumenter.Clear();
+            //foreach (var monument1 in monumenter)
+            //{
+            //    MonumentSingleton.Monumenter.Add(monument1);
+            //}
+
+
 
         }
+
 
         
     }

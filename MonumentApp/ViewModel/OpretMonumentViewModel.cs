@@ -9,24 +9,32 @@ using System.Windows.Input;
 using MonumentApp.Annotations;
 using MonumentApp.Common;
 using MonumentApp.Handler;
+//using MonumentApp.Annotations;
 using MonumentApp.Model;
 
 namespace MonumentApp.ViewModel
 {
-   public class MonumentViewModel : INotifyPropertyChanged
+    public class OpretMonumentViewModel : INotifyPropertyChanged
     {
         public MonumentSingleton MonumentSingleton { get; set; }
         public ICommand CreateCommand { get; set; }
         public MonumentHandler MonumentHandler { get; set; }
-       public MonumentOversigt monumentOversigt => StaticObjects.SelectedMonumenter;
+
+        public MonumentOversigt monumentOversigt => StaticObjects.SelectedMonumenter;
         public PlaceringsTyper placeringsTyper => StaticObjects.SelectedPlaceringsTyper;
 
-        public MonumentViewModel()
+        public OpretMonumentViewModel()
         {
             MonumentSingleton = MonumentSingleton.Instance;
             MonumentHandler = new MonumentHandler();
             NytMonumentOversigt = new MonumentOversigt();
-            //CreateCommand = new RelayCommand(MonumentHandler.OpretMonument);
+            CreateCommand = new RelayCommand(OpretMonument);
+
+        }
+
+        public void OpretMonument()
+        {
+            MonumentHandler.OpretMonument(NytMonumentOversigt);
         }
 
         public MonumentOversigt NytMonumentOversigt { get; set; }
@@ -42,4 +50,3 @@ namespace MonumentApp.ViewModel
         }
     }
 }
-

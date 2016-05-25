@@ -36,9 +36,9 @@
                     </TextBlock.Foreground>
                 </TextBlock>
 
-                <TextBlock x:Name="NavnBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Navn på monument" VerticalAlignment="Top" FontSize="16" Margin="80,120,0,0"/>
+                <TextBlock x:Name="NavnBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Navn på MonumentOversigt" VerticalAlignment="Top" FontSize="16" Margin="80,120,0,0"/>
                 <TextBox x:Name="NavnBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="80,155,0,0" Width="450"/>
-                <TextBlock x:Name="NummerBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Monument Nummer" VerticalAlignment="Top" Margin="550,120,0,0"/>
+                <TextBlock x:Name="NummerBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="MonumentOversigt Nummer" VerticalAlignment="Top" Margin="550,120,0,0"/>
                 <TextBox x:Name="NummerBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="550,155,0,0" Width="50"/>
                 <TextBlock x:Name="AdresseBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Margin="80,220,0,0"/>
                 <TextBox x:Name="AdresseBox1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="80,255,0,0" Width="450"/>

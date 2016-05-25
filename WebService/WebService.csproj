@@ -204,6 +204,7 @@
     <Compile Include="Controllers\PlaceringsOversigtsController.cs" />
     <Compile Include="Controllers\PlaceringsTypersController.cs" />
     <Compile Include="Controllers\PostNrTabelsController.cs" />
+    <Compile Include="Controllers\SamletOversigtsController.cs" />
     <Compile Include="Controllers\SkadeOversigtsController.cs" />
     <Compile Include="Controllers\SkadeTypersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />

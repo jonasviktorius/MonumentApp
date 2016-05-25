@@ -11,6 +11,9 @@ namespace MonumentApp.Pages
         public MonumentPage()
         {
             this.InitializeComponent();
+           
         }
+
+     
     }
 }
