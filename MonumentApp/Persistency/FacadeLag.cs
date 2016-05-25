@@ -69,7 +69,7 @@ namespace MonumentApp.Persistency
                 }
                 catch (Exception ex)
                 {
-                    new MessageDialog(ex.Message).ShowAsync();
+                    //new MessageDialog(ex.Message).ShowAsync();
                 }
             }
 
