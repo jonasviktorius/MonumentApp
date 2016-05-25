@@ -14,7 +14,7 @@ namespace MonumentApp.Persistency
 {
     class FacadeLag
     {
-        const string ServerUrl = "http://100metergruppen.database.windows.net";
+        const string ServerUrl = "http://localhost:22043/";
         HttpClientHandler handler;
 
         public FacadeLag()
@@ -23,7 +23,7 @@ namespace MonumentApp.Persistency
             handler.UseDefaultCredentials = true;
         }
 
-        public IEnumerable<Monument> GetMonumenter()
+        public IEnumerable<MonumentOversigt> GetMonumentOversigts()
         {
             using (var client = new HttpClient(handler))
             {
@@ -32,13 +32,13 @@ namespace MonumentApp.Persistency
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
-                    var response = client.GetAsync("api/Monumenter").Result;
+                    var response = client.GetAsync("api/MonumentOversigts").Result;
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string monumentListJson = response.Content.ReadAsStringAsync().Result;
-                        IEnumerable<Monument> monumentList = JsonConvert.DeserializeObject<IEnumerable<Monument>>(monumentListJson);
-                        return monumentList;
+                        string monumentOversigtListJson = response.Content.ReadAsStringAsync().Result;
+                        IEnumerable<MonumentOversigt> monumentOversigtList = JsonConvert.DeserializeObject<IEnumerable<MonumentOversigt>>(monumentOversigtListJson);
+                        return monumentOversigtList;
                     }
 
                 }

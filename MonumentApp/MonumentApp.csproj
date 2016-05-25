@@ -90,6 +90,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="MonumentApp_TemporaryKey.pfx" />
     <None Include="project.json" />
     <None Include="project.lock.json" />
   </ItemGroup>
@@ -98,9 +99,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Handler\MonumentHandler.cs" />
-    <Compile Include="Model\Monument.cs" />
-    <Compile Include="Model\MonumentSingleton.cs" />
+    <Compile Include="Model\MonumentOversigt.cs" />
+    <Compile Include="Model\MonumentOversigtSingleton.cs" />
     <Compile Include="Model\Skade.cs" />
     <Compile Include="Pages\BehandlingsPage.xaml.cs">
       <DependentUpon>BehandlingsPage.xaml</DependentUpon>
@@ -129,13 +129,12 @@
     <Compile Include="Presentation\DisplayableTheme.cs" />
     <Compile Include="Presentation\SettingsViewModel.cs" />
     <Compile Include="Presentation\ShellViewModel.cs" />
-    <Compile Include="ViewModel\MonumentViewModel.cs" />
+    <Compile Include="ViewModel\MonumentOversigtViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="MonumentApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\lilleHavfrue.png" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonumentApp.Model
 {
-    class Monument
+    class MonumentOversigt
     {
         public string GlobalId { get; set; }
         public string Navn { get; set; }
@@ -15,11 +15,11 @@ namespace MonumentApp.Model
         public string Note { get; set; }
         public string Bevaringsværdig { get; set; }
 
-        public Monument()
+        public MonumentOversigt()
         {
             
         }
-        public Monument(string globalId, string navn, string adresse, string bevaringsværdig)
+        public MonumentOversigt(string globalId, string navn, string adresse, string bevaringsværdig)
         {
             GlobalId = globalId;
             Navn = navn;
