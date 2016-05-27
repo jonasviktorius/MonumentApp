@@ -23,16 +23,12 @@ namespace MonumentApp.Handler
         {
         }
 
-        public void OpretMonument()
+        public void OpretMonument(MonumentOversigt nytMonumentOversigt)
         {
       
             FacadeLag facade = new FacadeLag();
-           facade.SaveMonument(StaticObjects.SelectedMonumenter);
+           facade.SaveMonument(nytMonumentOversigt);
             facade.SavePlacering(StaticObjects.SelectedPlaceringsTyper);
-
-
-
-
 
             //var monumenter = new FacadeLag().GetMonumenter();
 
@@ -41,8 +37,6 @@ namespace MonumentApp.Handler
             //{
             //    MonumentSingleton.Monumenter.Add(monument1);
             //}
-
-
 
         }
 
