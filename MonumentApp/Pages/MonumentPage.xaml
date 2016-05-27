@@ -27,7 +27,7 @@
         </Grid.Background>
         <ScrollViewer Padding="{x:Bind Frame.Padding, Mode=OneWay}">
             <Grid Height="1405">
-                <TextBlock x:Name="MonumentBlock" Height="110" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Text="MonumentOversigt" Width="430" FontWeight="Bold" FontSize="22.667" Margin="80, 30,0,0">
+                <TextBlock x:Name="MonumentBlock" Height="110" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Monument" Width="430" FontWeight="Bold" FontSize="22.667" Margin="80, 30,0,0">
                     <TextBlock.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>
@@ -37,9 +37,9 @@
                     </TextBlock.Foreground>
                 </TextBlock>
 
-                <TextBlock x:Name="NavnBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Navn på MonumentOversigt" VerticalAlignment="Top" FontSize="16" Margin="80,120,0,0"/>
+                <TextBlock x:Name="NavnBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Navn på Monument" VerticalAlignment="Top" FontSize="16" Margin="80,120,0,0"/>
                 <TextBox x:Name="NavnBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding monumentOversigt.Navn, Mode=TwoWay}" VerticalAlignment="Top" Margin="80,155,0,0" Width="450"/>
-                <TextBlock x:Name="NummerBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="MonumentOversigt Nummer" VerticalAlignment="Top" Margin="550,120,0,0"/>
+                <TextBlock x:Name="NummerBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Monument Nr" VerticalAlignment="Top" Margin="550,120,0,0"/>
                 <TextBox x:Name="NummerBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding monumentOversigt.Global_Id, Mode=TwoWay}" VerticalAlignment="Top" Margin="550,155,0,0" Width="50"/>
                 <TextBlock x:Name="AdresseBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Margin="80,220,0,0"/>
                 <TextBox x:Name="AdresseBox1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding monumentOversigt.Adresse, Mode=TwoWay}" VerticalAlignment="Top" Margin="80,255,0,0" Width="450"/>
@@ -51,33 +51,31 @@
                 <CheckBox x:Name="JordCheckBox" Content="      Jord" VerticalAlignment="Top" Margin="80,340,0,0" IsChecked="{Binding placeringsTyper.Jord, Mode=TwoWay}"/>
                 <CheckBox x:Name="BygningCheckBox" Content="      Bygning" VerticalAlignment="Top" Margin="80,370,0,0" IsChecked="{Binding placeringsTyper.Bygning, Mode=TwoWay}"/>
                 <CheckBox x:Name="FacadeCheckBox" Content="      Facade" VerticalAlignment="Top" Margin="80,400,0,0" IsChecked="{Binding placeringsTyper.Facade, Mode=TwoWay}"/>
-                <TextBlock x:Name="TypeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="SkadeType_Id" VerticalAlignment="Top" Margin="325,310,0,0" FontWeight="Bold"/>
-                <CheckBox x:Name="SkulpturCheck" Content="      Skulptur" VerticalAlignment="Top" Margin="325,340,0,0"/>
-                <CheckBox x:Name="SokkelCheck" Content="      Sokkel" VerticalAlignment="Top" Margin="325,370,0,0"/>
-                <CheckBox x:Name="ReliefCheck" Content="      Relief" VerticalAlignment="Top" Margin="325,400,0,0"/>
-                <CheckBox x:Name="VandkunstCheck" Content="      Vandkunst" VerticalAlignment="Top" Margin="325,430,0,0"/>
-                <TextBlock x:Name="BevaringsVærdigBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bevaringsværdi" VerticalAlignment="Top" Margin="550, 310, 0,0" FontWeight="Bold"/>
-                <CheckBox x:Name="MegetBVCheck" Content="      Meget Bevaringsværdi" VerticalAlignment="Top" Margin="550, 340, 0,0"/>
-                <CheckBox x:Name="BVCheck" Content="      Bevaringsværdi" VerticalAlignment="Top" Margin="550, 370, 0,0 " />
-                <CheckBox x:Name="MindreBVCheck" Content="      Mindre Bevaringsværdi" VerticalAlignment="Top" Margin="550, 400, 0,0 " />
+                <TextBlock x:Name="TypeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Margin="325,310,0,0" FontWeight="Bold"/>
+                <CheckBox x:Name="SkulpturCheck" Content="      Skulptur" VerticalAlignment="Top" Margin="325,340,0,0" IsChecked="{Binding monumentTyper.Skulptur, Mode=TwoWay}"/>
+                <CheckBox x:Name="SokkelCheck" Content="      Sokkel" VerticalAlignment="Top" Margin="325,370,0,0" IsChecked="{Binding monumentTyper.Sokkel, Mode=TwoWay}"/>
+                <CheckBox x:Name="ReliefCheck" Content="      Relief" VerticalAlignment="Top" Margin="325,400,0,0" IsChecked="{Binding monumentTyper.Relief, Mode=TwoWay}"/>
+                <CheckBox x:Name="VandkunstCheck" Content="      Vandkunst" VerticalAlignment="Top" Margin="325,430,0,0" IsChecked="{Binding monumentTyper.Vandkunst, Mode=TwoWay}"/>
+                <TextBlock x:Name="BevaringsVærdigBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bevaringsværdi" VerticalAlignment="Top" Margin="675,120,0,0" FontWeight="Bold"/>
+                <TextBox x:Name="BevaringsværdiBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonumentOversigt.Bevaringsværdi, Mode=TwoWay}"  VerticalAlignment="Top" Margin="690,155,0,0" Width="50"/>
                 <TextBlock x:Name="MaterialeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Materiale" VerticalAlignment="Top" Margin="80,485,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="StenBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sten" VerticalAlignment="Top" Margin="80,550,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="MetalBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Metal" VerticalAlignment="Top" Margin="330, 550, 0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="AndetBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Andet" VerticalAlignment="Top" Margin="580, 550, 0,0" FontWeight="Bold"/>
-                <CheckBox x:Name="GranitCheck" Content="      Granit" VerticalAlignment="Top" Margin="80, 580, 0 ,0" />
-                <CheckBox x:Name="MarmorCheck" Content="      Marmor" VerticalAlignment="Top" Margin="80, 610, 0,0 " />
-                <CheckBox x:Name="SandStenCheck" Content="      Sandsten" VerticalAlignment="Top" Margin="80, 640, 0 ,0"/>
-                <CheckBox x:Name="KalkStenCheck" Content="      Kalksten" VerticalAlignment="Top" Margin="80, 670, 0 ,0"/>
-                <CheckBox x:Name="BronzeCheck" Content="      Bronze" VerticalAlignment="Top" Margin="330, 580, 0,0"/>
-                <CheckBox x:Name="CortenStålCheck" Content="      Cortenstål" VerticalAlignment="Top" Margin="330, 610, 0, 0" />
-                <CheckBox x:Name="BemaletStålCheck" Content="      Bemalet Stål" VerticalAlignment="Top" Margin="330, 640, 0,0 " />
-                <CheckBox x:Name="AluminiumCheck" Content="      Aluminium" VerticalAlignment="Top" Margin="330, 670, 0,0" />
-                <CheckBox x:Name="JernCheck" Content="      Jern" VerticalAlignment="Top" Margin="330, 700, 0,0" />
-                <CheckBox x:Name="AndetMetalCheck" Content="      Andet Metal" VerticalAlignment="Top" Margin="330, 730, 0 ,0" />
-                <CheckBox x:Name="TræCheck" Content="      Træ" VerticalAlignment="Top" Margin="580, 580,0,0"/>
-                <CheckBox x:Name="TeglCheck" Content="      Tegl" VerticalAlignment="Top" Margin="580, 610,0,0"/>
-                <CheckBox x:Name="BetonCheck" Content="      Beton" VerticalAlignment="Top" Margin="580, 640,0,0"/>
-                <CheckBox x:Name="AndetMaterialeCheck" Content="      Andet Materiale" VerticalAlignment="Top" Margin="580, 670,0,0"/>
+                <CheckBox x:Name="GranitCheck" Content="      Granit" VerticalAlignment="Top" Margin="80, 580, 0 ,0" IsChecked="{Binding materialeTyper.Granit, Mode=TwoWay}" />
+                <CheckBox x:Name="MarmorCheck" Content="      Marmor" VerticalAlignment="Top" Margin="80, 610, 0,0 " IsChecked="{Binding materialeTyper.Marmor, Mode=TwoWay}" />
+                <CheckBox x:Name="SandStenCheck" Content="      Sandsten" VerticalAlignment="Top" Margin="80, 640, 0 ,0" IsChecked="{Binding materialeTyper.Sandsten, Mode=TwoWay}"/>
+                <CheckBox x:Name="KalkStenCheck" Content="      Kalksten" VerticalAlignment="Top" Margin="80, 670, 0 ,0" IsChecked="{Binding materialeTyper.Kalksten, Mode=TwoWay}"/>
+                <CheckBox x:Name="BronzeCheck" Content="      Bronze" VerticalAlignment="Top" Margin="330, 580, 0,0" IsChecked="{Binding materialeTyper.Bronze, Mode=TwoWay}"/>
+                <CheckBox x:Name="CortenStålCheck" Content="      Cortenstål" VerticalAlignment="Top" Margin="330, 610, 0, 0" IsChecked="{Binding materialeTyper.Cortenstål, Mode=TwoWay}" />
+                <CheckBox x:Name="BemaletStålCheck" Content="      Bemalet Stål" VerticalAlignment="Top" Margin="330, 640, 0,0 " IsChecked="{Binding materialeTyper.BemaletStål, Mode=TwoWay}" />
+                <CheckBox x:Name="AluminiumCheck" Content="      Aluminium" VerticalAlignment="Top" Margin="330, 670, 0,0" IsChecked="{Binding materialeTyper.Aluminium, Mode=TwoWay}" />
+                <CheckBox x:Name="JernCheck" Content="      Jern" VerticalAlignment="Top" Margin="330, 700, 0,0" IsChecked="{Binding materialeTyper.Jern, Mode=TwoWay}" />
+                <CheckBox x:Name="AndetMetalCheck" Content="      Andet Metal" VerticalAlignment="Top" Margin="330, 730, 0 ,0" IsChecked="{Binding materialeTyper.AndetMetal, Mode=TwoWay}" />
+                <CheckBox x:Name="TræCheck" Content="      Træ" VerticalAlignment="Top" Margin="580, 580,0,0" IsChecked="{Binding materialeTyper.Trae, Mode=TwoWay}"/>
+                <CheckBox x:Name="TeglCheck" Content="      Tegl" VerticalAlignment="Top" Margin="580, 610,0,0" IsChecked="{Binding materialeTyper.Tegl, Mode=TwoWay}"/>
+                <CheckBox x:Name="BetonCheck" Content="      Beton" VerticalAlignment="Top" Margin="580, 640,0,0" IsChecked="{Binding materialeTyper.Beton, Mode=TwoWay}"/>
+                <CheckBox x:Name="AndetMaterialeCheck" Content="      Andet Materiale" VerticalAlignment="Top" Margin="580, 670,0,0" IsChecked="{Binding materialeTyper.AndetMateriale, Mode=TwoWay}"/>
 
                 <Button x:Name="OpdaterMonumentButton" Content="Opdater MonumentOversigt" VerticalAlignment="Top" Height="60" Width="200"  Margin="80,1265,0,0" FontSize="18.667"/>
                 <Image x:Name="little_mermaid_faded_png" Source="little_mermaid_faded.png" Stretch="Fill" Margin="0,-35,-22,0" HorizontalAlignment="Right" Width="330" Height="385" VerticalAlignment="Top"/>

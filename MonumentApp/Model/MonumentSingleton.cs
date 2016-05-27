@@ -32,9 +32,9 @@ namespace MonumentApp.Model
             //Monumenter = new ObservableCollection<MonumentOversigt>(new FacadeLag().GetMonumenter());
         }
 
-        public void Add(string Navn, String Adresse, string Bevaringsværdig)
+        public void Add(string Navn, String Adresse, int PostNr, string Note, string Bevaringsværdi)
         {
-            Monumenter.Add(new MonumentOversigt(Navn, Adresse, Bevaringsværdig));
+            Monumenter.Add(new MonumentOversigt(Navn, Adresse, PostNr, Note, Bevaringsværdi));
         }
     }
 }

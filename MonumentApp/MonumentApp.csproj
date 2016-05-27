@@ -99,8 +99,10 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Handler\MonumentHandler.cs" />
     <Compile Include="Hjaelpeklasser\Navigate.cs" />
+    <Compile Include="Model\MaterialeTyper.cs" />
     <Compile Include="Model\MonumentOversigt.cs" />
     <Compile Include="Model\MonumentSingleton.cs" />
+    <Compile Include="Model\MonumentTyper.cs" />
     <Compile Include="Model\PlaceringsTyper.cs" />
     <Compile Include="Model\PostNr.cs" />
     <Compile Include="Model\Skade.cs" />

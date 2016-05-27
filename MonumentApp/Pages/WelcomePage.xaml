@@ -28,7 +28,7 @@
 
 
             </ScrollViewer.Foreground>
-            <TextBlock x:Name="OverskriftBlock" TextWrapping="Wrap" Text="Administrer MonumentOversigter" HorizontalAlignment="Center" FontSize="33.333" FontWeight="Bold">
+            <TextBlock x:Name="OverskriftBlock" TextWrapping="Wrap" Text="Administrer Monumenter" HorizontalAlignment="Center" FontSize="33.333" FontWeight="Bold">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -47,7 +47,7 @@
 
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Søg....." VerticalAlignment="Center" Margin="0,0,525,100" FontSize="24" FontStyle="Italic"/>
         <Button x:Name="SøgeButton" Content="Søg" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="700,0,10,2" FontSize="20" FontWeight="Bold" Click="SøgeButton_Click"/>
-        <Button x:Name="button" Content="Opret nyt MonumentOversigt" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="350,350,0,0" Height="70" FontSize="24">
+        <Button x:Name="button" Content="Opret nyt Monument" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="450,350,0,0" Height="70" FontSize="24">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:NavigateToPageAction TargetPage="MonumentOversigtApp.Pages.OpretMonumentOversigtPage"/>

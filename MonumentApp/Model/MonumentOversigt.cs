@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace MonumentApp.Model
 {
-   public class MonumentOversigt 
+
+    public class MonumentOversigt
     {
-  
+
         [Key]
         public int Global_Id { get; set; }
 
@@ -27,28 +28,34 @@ namespace MonumentApp.Model
         public string Note { get; set; }
 
         [StringLength(1)]
+
         public string Bevaringsværdi { get; set; }
 
         public virtual PostNrTabel PostNrTabel { get; set; }
 
-      
+
         public virtual ICollection<SkadeOversigt> SkadeOversigt { get; set; }
 
         public MonumentOversigt()
         {
-            
+
         }
-        public MonumentOversigt(string navn, string adresse, string bevaringsværdi)
+
+        public MonumentOversigt(string navn, string adresse, int? postNr, string note, string bevaringsværdi)
         {
+
             Navn = navn;
             Adresse = adresse;
+            PostNr = postNr;
+            Note = note;
             Bevaringsværdi = bevaringsværdi;
+
         }
-        
+
 
         public override string ToString()
         {
-            return $"Navn: {Navn}, Adresse: {Adresse}, Bevaringsværdig: {Bevaringsværdi}";
+            return $"Navn: {Navn}, Adresse: {Adresse}, PostNr: {PostNr}, Note: {Note}, Bevaringsværdig: {Bevaringsværdi}";
         }
     }
 }

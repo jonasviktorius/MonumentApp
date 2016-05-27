@@ -18,8 +18,11 @@ namespace MonumentApp.ViewModel
         public MonumentSingleton MonumentSingleton { get; set; }
         public ICommand CreateCommand { get; set; }
         public MonumentHandler MonumentHandler { get; set; }
-       public MonumentOversigt monumentOversigt => StaticObjects.SelectedMonumenter;
+        public PostNrTabel postNrTabel => StaticObjects.SelectedPostNr;
+        public MonumentOversigt monumentOversigt => StaticObjects.SelectedMonumenter;
         public PlaceringsTyper placeringsTyper => StaticObjects.SelectedPlaceringsTyper;
+        public MonumentTyper monumentTyper => StaticObjects.SelectedMonumentTyper;
+        public MaterialeTyper materialeTyper => StaticObjects.SelectedMaterialeTyper;
 
         public MonumentViewModel()
         {
