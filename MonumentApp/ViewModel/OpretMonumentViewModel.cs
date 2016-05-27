@@ -16,12 +16,24 @@ namespace MonumentApp.ViewModel
 {
     public class OpretMonumentViewModel : INotifyPropertyChanged
     {
+        public string PostNrBinding
+        {
+            get { return monumentOversigt.PostNr.ToString(); }
+            set
+            {
+                int postnr;
+                if (int.TryParse(value, out postnr))
+                    monumentOversigt.PostNr = postnr;
+            } 
+        }
+
         public MonumentSingleton MonumentSingleton { get; set; }
         public ICommand CreateCommand { get; set; }
         public MonumentHandler MonumentHandler { get; set; }
-  public PostNrTabel postNrTabel => StaticObjects.SelectedPostNr;
+        public PostNrTabel postNrTabel => StaticObjects.SelectedPostNr;
         public MonumentOversigt monumentOversigt => StaticObjects.SelectedMonumenter;
         public PlaceringsTyper placeringsTyper => StaticObjects.SelectedPlaceringsTyper;
+        public PlaceringsOversigt placeringsOversigt => StaticObjects.SelectedPlaceringsOversigt;
         public MonumentTyper monumentTyper => StaticObjects.SelectedMonumentTyper;
         public MaterialeTyper materialeTyper => StaticObjects.SelectedMaterialeTyper;
 
@@ -36,7 +48,7 @@ namespace MonumentApp.ViewModel
 
         public void OpretMonument()
         {
-            MonumentHandler.OpretMonument(NytMonumentOversigt);
+            MonumentHandler.OpretMonument();
         }
 
         public MonumentOversigt NytMonumentOversigt { get; set; }

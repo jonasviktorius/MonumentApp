@@ -103,10 +103,11 @@
     <Compile Include="Model\MonumentOversigt.cs" />
     <Compile Include="Model\MonumentSingleton.cs" />
     <Compile Include="Model\MonumentTyper.cs" />
+    <Compile Include="Model\PlaceringsOversigt.cs" />
     <Compile Include="Model\PlaceringsTyper.cs" />
     <Compile Include="Model\PostNr.cs" />
-    <Compile Include="Model\Skade.cs" />
-    <Compile Include="Model\SkadesTyper.cs" />
+    <Compile Include="Model\SkadeOversigt.cs" />
+    <Compile Include="Model\SkadeTyper.cs" />
     <Compile Include="Model\StaticObjects.cs" />
     <Compile Include="Pages\BehandlingsPage.xaml.cs">
       <DependentUpon>BehandlingsPage.xaml</DependentUpon>

@@ -44,14 +44,14 @@
                 </TextBlock>
 
                 <TextBlock x:Name="NavnBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Navn på Monument" VerticalAlignment="Top" FontSize="16" Margin="80,120,0,0"/>
-                <TextBox x:Name="NavnBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonumentOversigt.Navn, Mode=TwoWay}" VerticalAlignment="Top" Margin="80,155,0,0" Width="450"/>
+                <TextBox x:Name="NavnBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding monumentOversigt.Navn, Mode=TwoWay}" VerticalAlignment="Top" Margin="80,155,0,0" Width="450"/>
                 <TextBlock x:Name="AdresseBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" Margin="80,220,0,0"/>
-                <TextBox x:Name="AdresseBox1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonumentOversigt.Adresse, Mode=TwoWay}" VerticalAlignment="Top" Margin="80,255,0,0" Width="450"/>
+                <TextBox x:Name="AdresseBox1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding monumentOversigt.Adresse, Mode=TwoWay}" VerticalAlignment="Top" Margin="80,255,0,0" Width="450"/>
                 <TextBlock x:Name="PostNrBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Post Nr." VerticalAlignment="Top" Margin="550, 220, 0,0" Width="70"/>
-                <TextBox x:Name="PostNrBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonumentOversigt.PostNrTabel.PostNr, Mode=TwoWay}" VerticalAlignment="Top" Margin="550, 255, 0, 0" Width="50"/>
+                <TextBox x:Name="PostNrBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding PostNrBinding, Mode=TwoWay}" VerticalAlignment="Top" Margin="550, 255, 0, 0" Width="50"/>
                 <TextBlock x:Name="PlaceringsBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Placering" VerticalAlignment="Top" Margin="80,310,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="ByBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="By" VerticalAlignment="Top" Margin="640, 220, 0,0" Width="150"/>
-                <TextBox x:Name="ByBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonumentOversigt.PostNrTabel.ByNavn, Mode=TwoWay}" VerticalAlignment="Top" Margin="640, 255, 0,0" Width="150"/>
+                <TextBox x:Name="ByBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding monumentOversigt.PostNrTabel.ByNavn, Mode=TwoWay}" VerticalAlignment="Top" Margin="640, 255, 0,0" Width="150"/>
                 <CheckBox x:Name="JordCheckBox" Content="      Jord" VerticalAlignment="Top" Margin="80,340,0,0" IsChecked="{Binding placeringsTyper.Jord, Mode=TwoWay}"/>
                 <CheckBox x:Name="BygningCheckBox" Content="      Bygning" VerticalAlignment="Top" Margin="80,370,0,0" IsChecked="{Binding placeringsTyper.Bygning, Mode=TwoWay}"/>
                 <CheckBox x:Name="FacadeCheckBox" Content="      Facade" VerticalAlignment="Top" Margin="80,400,0,0" IsChecked="{Binding placeringsTyper.Facade, Mode=TwoWay}"/>
@@ -61,7 +61,7 @@
                 <CheckBox x:Name="ReliefCheck" Content="      Relief" VerticalAlignment="Top" Margin="325,400,0,0" IsChecked="{Binding monumentTyper.Relief, Mode=TwoWay}"/>
                 <CheckBox x:Name="VandkunstCheck" Content="      Vandkunst" VerticalAlignment="Top" Margin="325,430,0,0" IsChecked="{Binding monumentTyper.Vandkunst, Mode=TwoWay}"/>
                 <TextBlock x:Name="BevaringsVærdigBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bevaringsværdi" VerticalAlignment="Top" Margin="582,120,0,0" FontWeight="Bold"/>
-                <TextBox x:Name="BevaringsværdiBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NytMonumentOversigt.Bevaringsværdi, Mode=TwoWay}"  VerticalAlignment="Top" Margin="600,150,0,0" Width="50"/>
+                <TextBox x:Name="BevaringsværdiBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding monumentOversigt.Bevaringsværdi, Mode=TwoWay}"  VerticalAlignment="Top" Margin="600,150,0,0" Width="50"/>
                 <TextBlock x:Name="MaterialeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Materiale" VerticalAlignment="Top" Margin="79,490,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="StenBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sten" VerticalAlignment="Top" Margin="80,550,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="MetalBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Metal" VerticalAlignment="Top" Margin="330, 550, 0,0" FontWeight="Bold"/>

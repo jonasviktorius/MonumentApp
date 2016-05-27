@@ -23,6 +23,6 @@ namespace WebService
         public string SkadeType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SkadeOversigt> SkadeOversigt { get; set; }
+        public virtual HashSet<SkadeOversigt> SkadeOversigt { get; set; }
     }
 }

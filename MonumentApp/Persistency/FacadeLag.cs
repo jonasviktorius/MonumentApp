@@ -93,8 +93,8 @@ namespace MonumentApp.Persistency
                 }
                 catch (Exception ex)
                 {
-                    throw;
-                    //new MessageDialog(ex.Message).ShowAsync();
+
+                    new MessageDialog(ex.Message + "Der skete en fejl, da monumentet skulle gemmes").ShowAsync();
                 }
             }
      }
@@ -120,15 +120,32 @@ namespace MonumentApp.Persistency
                 }
                 catch (Exception ex)
                 {
-                    throw;
-                    //new MessageDialog(ex.Message);
+
+                    new MessageDialog(ex.Message + "Der var fejl ved at hente monumenterne");
                 }
                 return null;
              }
         }
-        public void SavePlacering(PlaceringsTyper selectedPlaceringsTyper)
+        public void SavePlacering(PlaceringsOversigt selectedPlaceringsOversigt)
         {
-           
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(ServerUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    string postBody = JsonConvert.SerializeObject(selectedPlaceringsOversigt);
+                    var response =
+                        client.PostAsync("api/PlaceringsOversigt",
+                            new StringContent(postBody, Encoding.UTF8, "application/json")).Result;
+                }
+                catch (Exception ex)
+                {
+
+                    new MessageDialog(ex.Message + "Der skete en fejl, da placeringen skulle gemmes").ShowAsync();
+                }
+            }
         }
     }
 }
