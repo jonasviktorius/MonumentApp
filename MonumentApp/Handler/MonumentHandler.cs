@@ -15,8 +15,6 @@ namespace MonumentApp.Handler
 {
     public class MonumentHandler
     {
-
-
         public MonumentSingleton MonumentSingleton => MonumentSingleton.Instance;
 
         public MonumentHandler()
@@ -39,8 +37,5 @@ namespace MonumentApp.Handler
             //}
 
         }
-
-
-        
     }
 }

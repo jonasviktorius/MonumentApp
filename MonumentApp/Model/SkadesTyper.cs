@@ -14,15 +14,8 @@ namespace MonumentApp.Model
             {
                 SkadeOversigt = new HashSet<SkadeOversigt>();
             }
-
-            [Key]
             public int SkadeType_Id { get; set; }
-
-            [Required]
-            [StringLength(30)]
             public string SkadeType { get; set; }
-
-           
             public virtual ICollection<SkadeOversigt> SkadeOversigt { get; set; }
         }
     }

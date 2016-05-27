@@ -26,21 +26,14 @@ namespace MonumentApp.Model
 
         [StringLength(100)]
         public string Note { get; set; }
-
-        [StringLength(1)]
-
         public string Bevaringsværdi { get; set; }
-
         public virtual PostNrTabel PostNrTabel { get; set; }
-
-
         public virtual ICollection<SkadeOversigt> SkadeOversigt { get; set; }
 
         public MonumentOversigt()
         {
 
         }
-
         public MonumentOversigt(string navn, string adresse, int? postNr, string note, string bevaringsværdi)
         {
 
@@ -51,8 +44,6 @@ namespace MonumentApp.Model
             Bevaringsværdi = bevaringsværdi;
 
         }
-
-
         public override string ToString()
         {
             return $"Navn: {Navn}, Adresse: {Adresse}, PostNr: {PostNr}, Note: {Note}, Bevaringsværdig: {Bevaringsværdi}";

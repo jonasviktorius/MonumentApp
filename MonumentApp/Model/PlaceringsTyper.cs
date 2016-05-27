@@ -11,19 +11,15 @@ namespace MonumentApp.Model
         public bool Jord { get; set; }
         public bool Bygning { get; set; }
         public bool Facade { get; set; }
-
         public PlaceringsTyper(bool jord, bool bygning, bool facade)
         {
             Jord = jord;
             Bygning = bygning;
             Facade = facade;
         }
-
         public PlaceringsTyper()
         {
-            
         }
-
         public override string ToString()
         {
             return $"Jord: {Jord}, Bygning: {Bygning}, Facade: {Facade}";

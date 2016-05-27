@@ -48,7 +48,6 @@ namespace MonumentApp.Model
 
         public MaterialeTyper()
         {
-
         }
 
         public override string ToString()

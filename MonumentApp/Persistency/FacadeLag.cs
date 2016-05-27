@@ -12,17 +12,15 @@ using Newtonsoft.Json;
 
 namespace MonumentApp.Persistency
 {
-    class FacadeLag
+    public class FacadeLag
     {
         const string ServerUrl = "http://localhost:16042/";
         HttpClientHandler handler;
-
         public FacadeLag()
         {
             handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
         }
-
         public IEnumerable<MonumentOversigt> GetMonumenter()
         {
             using (var client = new HttpClient(handler))
@@ -52,7 +50,6 @@ namespace MonumentApp.Persistency
             }
 
         }
-
         public void SamletOversigt(int id)
         {
             using (var client = new HttpClient(handler))
@@ -72,17 +69,14 @@ namespace MonumentApp.Persistency
                     // Her skal de i rækkefølge som i den SamletOversigtsController er i, og ligges ind
                     // og bliver lagt ind i en liste på webservicen og her bliver de så taget ud igen.
                     // 
-                    StaticObjects.SelectedMonumenter = (MonumentOversigt) list[0];
-
-
-
+                    StaticObjects.SelectedPostNr = (PostNrTabel) list[0];
+                    StaticObjects.SelectedMonumenter = (MonumentOversigt) list[1];
+                    StaticObjects.SelectedPlaceringsTyper = (PlaceringsTyper) list[2];
+                    StaticObjects.SelectedMonumentTyper = (MonumentTyper) list[3];
+                    StaticObjects.SelectedMaterialeTyper = (MaterialeTyper) list[4];
                 }
-
-               
             }
-
-        }
-
+}
         public void SaveMonument(MonumentOversigt monumentOversigt)
         {
             using (var client = new HttpClient(handler))
@@ -99,12 +93,11 @@ namespace MonumentApp.Persistency
                 }
                 catch (Exception ex)
                 {
+                    throw;
                     //new MessageDialog(ex.Message).ShowAsync();
                 }
             }
-
-        }
-
+     }
         public MonumentOversigt HentMonument(int id)
         {
             using (var client = new HttpClient(handler))
@@ -112,9 +105,9 @@ namespace MonumentApp.Persistency
                 client.BaseAddress = new Uri(ServerUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                //try
-                //{
-                var response = client.GetAsync("api/MonumentOversigts/" + id).Result;
+                try
+                {
+                    var response = client.GetAsync("api/MonumentOversigts/" + id).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -124,16 +117,15 @@ namespace MonumentApp.Persistency
                     return monumentList;
                 }
 
-                //}
-                //catch (Exception ex)
-                //{
-                //    new MessageDialog(ex.Message);
-                //}
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                    //new MessageDialog(ex.Message);
+                }
                 return null;
-
-            }
+             }
         }
-
         public void SavePlacering(PlaceringsTyper selectedPlaceringsTyper)
         {
            

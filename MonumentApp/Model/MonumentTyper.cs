@@ -22,7 +22,6 @@ namespace MonumentApp.Model
         }
         public MonumentTyper()
         {
-
         }
 
         public override string ToString()
