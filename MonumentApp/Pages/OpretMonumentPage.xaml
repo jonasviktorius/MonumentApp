@@ -52,7 +52,7 @@
                 <TextBlock x:Name="PlaceringsBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Placering" VerticalAlignment="Top" Margin="80,310,0,0" FontWeight="Bold"/>
                 <TextBlock x:Name="ByBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="By" VerticalAlignment="Top" Margin="640, 220, 0,0" Width="150"/>
                 <TextBox x:Name="ByBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding monumentOversigt.PostNrTabel.ByNavn, Mode=TwoWay}" VerticalAlignment="Top" Margin="640, 255, 0,0" Width="150"/>
-                <CheckBox x:Name="JordCheckBox" Content="      Jord" VerticalAlignment="Top" Margin="80,340,0,0" IsChecked="{Binding placeringsTyper.Jord, Mode=TwoWay}"/>
+                <CheckBox x:Name="JordCheckBox" Content="      Jord" VerticalAlignment="Top" Margin="80,340,0,0" IsChecked="{Binding placeringsTyper.Jord,Mode=TwoWay}"/>
                 <CheckBox x:Name="BygningCheckBox" Content="      Bygning" VerticalAlignment="Top" Margin="80,370,0,0" IsChecked="{Binding placeringsTyper.Bygning, Mode=TwoWay}"/>
                 <CheckBox x:Name="FacadeCheckBox" Content="      Facade" VerticalAlignment="Top" Margin="80,400,0,0" IsChecked="{Binding placeringsTyper.Facade, Mode=TwoWay}"/>
                 <TextBlock x:Name="TypeBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Margin="325,310,0,0" FontWeight="Bold"/>

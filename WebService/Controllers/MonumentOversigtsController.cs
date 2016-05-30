@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebService;
+using WebService.Models.Binding;
 
 namespace WebService.Controllers
 {
@@ -83,6 +84,43 @@ namespace WebService.Controllers
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = monumentOversigt.Global_Id }, monumentOversigt);
+        }
+
+        [ResponseType(typeof(MonumentOversigt))]
+        [HttpPost]
+        [Route("api/v2/opretmonument")]
+        public HttpResponseMessage OpretMonument(MonumentBinding model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Modellen er ikke vaid...");
+            }
+
+            var monument = new MonumentOversigt
+            {
+                Adresse = model.Adresse,
+                Bevaringsværdi = model.Bevaringsværdi,
+                Navn = model.Navn,
+                Note = model.Note,
+                PostNr = model.PostNr
+            };
+
+            db.MonumentOversigt.Add(monument);
+            db.SaveChanges();
+
+            if (model.Jord)
+                db.PlaceringsOversigt.Add(new PlaceringsOversigt { Global_Id = monument.Global_Id, Placerings_Id = 1 });
+
+            if (model.Facade)
+                db.PlaceringsOversigt.Add(new PlaceringsOversigt { Global_Id = monument.Global_Id, Placerings_Id = 2 });
+
+            if (model.Bygning)
+                db.PlaceringsOversigt.Add(new PlaceringsOversigt { Global_Id = monument.Global_Id, Placerings_Id = 3 });
+
+            db.SaveChanges();
+
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         // DELETE: api/MonumentOversigts/5

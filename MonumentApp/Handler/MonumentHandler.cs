@@ -25,16 +25,12 @@ namespace MonumentApp.Handler
         {
       
             FacadeLag facade = new FacadeLag();
-           facade.SaveMonument(StaticObjects.SelectedMonumenter);
-            facade.SavePlacering(StaticObjects.SelectedPlaceringsOversigt);
+            
+           facade.SaveMonumentv2(StaticObjects.SelectedMonumenter, StaticObjects.SelectedPlaceringsTyper);
+            //facade.SavePlacering(StaticObjects.SelectedPlaceringsTyper);
+            //facade.SaveMonumentTyper(StaticObjects.SelectedMonumentTyper);
+            //facade.SaveMaterialeTyper(StaticObjects.SelectedMaterialeTyper);
 
-            //var monumenter = new FacadeLag().GetMonumenter();
-
-            //MonumentSingleton.Monumenter.Clear();
-            //foreach (var monument1 in monumenter)
-            //{
-            //    MonumentSingleton.Monumenter.Add(monument1);
-            //}
 
         }
     }

@@ -85,6 +85,32 @@ namespace WebService.Controllers
             return CreatedAtRoute("DefaultApi", new { id = placeringsTyper.Placerings_Id }, placeringsTyper);
         }
 
+        [ResponseType(typeof(PlaceringsTyper))]
+        [Route("api/PostPlaceringsTyper2")]
+        [HttpPost]
+        public HttpResponseMessage PostPlaceringsTyper2(PlaceringsTyperBinding placeringsTyper)
+        {
+            if (!ModelState.IsValid || placeringsTyper == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Modellen var forkert... ");
+            }
+
+            var models = new List<PlaceringsTyper>();
+
+            if (placeringsTyper.Bygning)
+                models.Add(new PlaceringsTyper { Placering = "Bygning" });
+            if(placeringsTyper.Facade)
+                models.Add(new PlaceringsTyper { Placering = "Facade" });
+            if (placeringsTyper.Jord)
+                models.Add(new PlaceringsTyper { Placering = "Jord" });
+
+
+            db.PlaceringsTyper.AddRange(models);
+            db.SaveChanges();
+
+            return Request.CreateResponse(HttpStatusCode.OK, models);
+        }
+
         // DELETE: api/PlaceringsTypers/5
         [ResponseType(typeof(PlaceringsTyper))]
         public IHttpActionResult DeletePlaceringsTyper(int id)

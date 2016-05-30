@@ -19,12 +19,8 @@ namespace MonumentApp.ViewModel
         public string PostNrBinding
         {
             get { return monumentOversigt.PostNr.ToString(); }
-            set
-            {
-                int postnr;
-                if (int.TryParse(value, out postnr))
-                    monumentOversigt.PostNr = postnr;
-            } 
+            set { int postnr; if (int.TryParse(value, out postnr))
+                    monumentOversigt.PostNr = postnr; } 
         }
 
         public MonumentSingleton MonumentSingleton { get; set; }
@@ -43,7 +39,6 @@ namespace MonumentApp.ViewModel
             MonumentHandler = new MonumentHandler();
             NytMonumentOversigt = new MonumentOversigt();
             CreateCommand = new RelayCommand(OpretMonument);
-
         }
 
         public void OpretMonument()

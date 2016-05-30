@@ -160,7 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -213,12 +212,14 @@
     </Compile>
     <Compile Include="MaterialeOversigt.cs" />
     <Compile Include="MaterialeTyper.cs" />
+    <Compile Include="Models\Binding\MonumentBinding.cs" />
     <Compile Include="MonumentContext.cs" />
     <Compile Include="MonumentOversigt.cs" />
     <Compile Include="MonumentTypeOversigt.cs" />
     <Compile Include="MonumentTyper.cs" />
     <Compile Include="PlaceringsOversigt.cs" />
     <Compile Include="PlaceringsTyper.cs" />
+    <Compile Include="PlaceringsTyperBinding.cs" />
     <Compile Include="PostNrTabel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SkadeOversigt.cs" />

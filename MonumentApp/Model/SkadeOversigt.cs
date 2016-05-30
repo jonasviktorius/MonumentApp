@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MonumentApp.Model
 {
-    public partial class SkadeOversigt
+    public class SkadeOversigt
     {
         public int Skade_Id { get; set; }
         public int Global_Id { get; set; }
