@@ -31,7 +31,9 @@ namespace MonumentApp.ViewModel
         public PlaceringsTyper placeringsTyper => StaticObjects.SelectedPlaceringsTyper;
         public PlaceringsOversigt placeringsOversigt => StaticObjects.SelectedPlaceringsOversigt;
         public MonumentTyper monumentTyper => StaticObjects.SelectedMonumentTyper;
+        public MonumentTypeOversigt monumentTypeOversigt => StaticObjects.SelectedMonumentTypeOversigt;
         public MaterialeTyper materialeTyper => StaticObjects.SelectedMaterialeTyper;
+        public MaterialeOversigt materialeOversigt => StaticObjects.SelectedMaterialeOversigt;
 
         public OpretMonumentViewModel()
         {

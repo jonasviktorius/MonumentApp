@@ -84,7 +84,33 @@ namespace WebService.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = monumentTyper.MonumentType_Id }, monumentTyper);
         }
+        [ResponseType(typeof(MonumentTyper))]
+        [Route("api/PostMonumentTyper2")]
+        [HttpPost]
+        public HttpResponseMessage PostMonumentTyper2(MonumentTyperBinding monumentTyper)
+        {
+            if (!ModelState.IsValid || monumentTyper == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Monument typer var forkert... ");
+            }
 
+            var models1 = new List<MonumentTyper>();
+
+            if (monumentTyper.Skulptur)
+                models1.Add(new MonumentTyper { MonumentType = "Skulptur" });
+            if (monumentTyper.Sokkel)
+                models1.Add(new MonumentTyper { MonumentType = "Sokkel" });
+            if (monumentTyper.Relief)
+                models1.Add(new MonumentTyper { MonumentType = "Relief" });
+            if (monumentTyper.Vandkunst)
+                models1.Add(new MonumentTyper { MonumentType = "Vandkunst" });
+
+
+            db.MonumentTyper.AddRange(models1);
+            db.SaveChanges();
+
+            return Request.CreateResponse(HttpStatusCode.OK, models1);
+        }
         // DELETE: api/MonumentTypers/5
         [ResponseType(typeof(MonumentTyper))]
         public IHttpActionResult DeleteMonumentTyper(int id)

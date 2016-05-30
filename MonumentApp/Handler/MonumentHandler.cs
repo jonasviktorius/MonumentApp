@@ -23,15 +23,15 @@ namespace MonumentApp.Handler
 
         public void OpretMonument()
         {
-      
-            FacadeLag facade = new FacadeLag();
-            
-           facade.SaveMonumentv2(StaticObjects.SelectedMonumenter, StaticObjects.SelectedPlaceringsTyper);
-            //facade.SavePlacering(StaticObjects.SelectedPlaceringsTyper);
-            //facade.SaveMonumentTyper(StaticObjects.SelectedMonumentTyper);
-            //facade.SaveMaterialeTyper(StaticObjects.SelectedMaterialeTyper);
-
-
+           FacadeLag facade = new FacadeLag();
+           facade.SaveMonumentv2(StaticObjects.SelectedMonumenter, StaticObjects.SelectedPlaceringsTyper, StaticObjects.SelectedMonumentTyper, StaticObjects.SelectedMaterialeTyper);
         }
+
+        //public void OpretSkade()
+        //{
+        //    FacadeLag facadeskade = new FacadeLag();
+        //    facadeskade.GemSkade(StaticObjects.SelectedMonumenter);
+        //}
+
     }
 }

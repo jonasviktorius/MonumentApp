@@ -29,9 +29,9 @@ namespace MonumentApp.Persistency
                 client.BaseAddress = new Uri(ServerUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                //try
-                //{
-                var response = client.GetAsync("api/MonumentOversigts").Result;
+                try
+                {
+                    var response = client.GetAsync("api/MonumentOversigts").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -41,12 +41,12 @@ namespace MonumentApp.Persistency
                     return monumentList;
                 }
 
-                //}
-                //catch (Exception ex)
-                //{
-                //    new MessageDialog(ex.Message);
-                //}
-                return null;
+            }
+                catch (Exception ex)
+            {
+                new MessageDialog(ex.Message + "Der skete en fejl da monumenterne skulle vises");
+            }
+            return null;
 
             }
 
@@ -100,7 +100,7 @@ namespace MonumentApp.Persistency
             }
         }
 
-        public void SaveMonumentv2(MonumentOversigt monumentOversigt, PlaceringsTyper placeringsTyper)
+        public void SaveMonumentv2(MonumentOversigt monumentOversigt, PlaceringsTyper placeringsTyper, MonumentTyper monumentTyper, MaterialeTyper materialeTyper)
         {
             var monumentBinding = new MonumentBinding
             {
@@ -111,7 +111,29 @@ namespace MonumentApp.Persistency
                 Facade = placeringsTyper.Facade,
                 Navn = monumentOversigt.Navn,
                 Note = monumentOversigt.Note,
-                PostNr = monumentOversigt.PostNr
+                PostNr = monumentOversigt.PostNr,
+                Skulptur = monumentTyper.Skulptur,
+                Sokkel = monumentTyper.Sokkel,
+                Relief = monumentTyper.Relief,
+                Vandkunst = monumentTyper.Vandkunst,
+                // materialetype af sten
+                Granit = materialeTyper.Granit,
+                Marmor = materialeTyper.Marmor,
+                Sandsten = materialeTyper.Sandsten,
+                Kalksten = materialeTyper.Kalksten,
+                // materialetype af metal
+                Bronze = materialeTyper.Bronze,
+                Cortenstål = materialeTyper.Cortenstål,
+                BemaletStål = materialeTyper.BemaletStål,
+                Aluminium = materialeTyper.Aluminium,
+                Jern = materialeTyper.Jern,
+                AndetMetal = materialeTyper.AndetMetal,
+                // andet materialetype
+                Trae = materialeTyper.Trae,
+                Tegl = materialeTyper.Tegl,
+                Beton = materialeTyper.Beton,
+                AndetMateriale = materialeTyper.AndetMateriale
+
             };
 
             using (var client = new HttpClient(handler))
@@ -194,48 +216,93 @@ namespace MonumentApp.Persistency
                 }
             }
         }
-        //public void SaveMonumentTyper(MonumentTyper selecteMonumentTyper)
-        //{
-        //    using (var client = new HttpClient(handler))
-        //    {
-        //        client.BaseAddress = new Uri(ServerUrl);
-        //        client.DefaultRequestHeaders.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        try
-        //        {
-        //            string postBody = JsonConvert.SerializeObject(selecteMonumentTyper);
-        //            var response =
-        //                client.PostAsync("api/MonumentTyper",
-        //                    new StringContent(postBody, Encoding.UTF8, "application/json")).Result;
-        //        }
-        //        catch (Exception ex)
-        //        {
 
-        //            new MessageDialog(ex.Message + "Der skete en fejl, da typen skulle gemmes").ShowAsync();
-        //        }
-        //    }
-        //}
+        public void SaveMonumentTyper(MonumentTyper selectedMonumentTyper)
+        {
+            {
+                using (var c = new HttpClient())
+                {
+                    c.BaseAddress = new Uri(ServerUrl);
+                    string postBody = JsonConvert.SerializeObject(selectedMonumentTyper);
+                    var response =
+                        c.PostAsync("api/PostMonumentTyper2",
+                            new StringContent(postBody, Encoding.UTF8, "application/json")).Result;
+                }
+                using (var client = new HttpClient(handler))
+                {
+                    client.BaseAddress = new Uri(ServerUrl);
+                    client.DefaultRequestHeaders.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    try
+                    {
+                        string postBody = JsonConvert.SerializeObject(selectedMonumentTyper);
+                        var response =
+                            client.PostAsync("api/PostMonumentTyper2",
+                                new StringContent(postBody, Encoding.UTF8, "application/json")).Result;
+                    }
+                    catch (Exception ex)
+                    {
 
-        //public void SaveMaterialeTyper(MaterialeTyper selectedMaterialeTyper)
-        //{
-        //    using (var client = new HttpClient(handler))
-        //    {
-        //        client.BaseAddress = new Uri(ServerUrl);
-        //        client.DefaultRequestHeaders.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        try
-        //        {
-        //            string postBody = JsonConvert.SerializeObject(selectedMaterialeTyper);
-        //            var response =
-        //                client.PostAsync("api/MaterialeTyper",
-        //                    new StringContent(postBody, Encoding.UTF8, "application/json")).Result;
-        //        }
-        //        catch (Exception ex)
-        //        {
+                        new MessageDialog(ex.Message + "Der skete en fejl, da typen skulle gemmes").ShowAsync();
+                    }
+                }
+            }
+        }
 
-        //            new MessageDialog(ex.Message + "Der skete en fejl, da materiale typerne skulle gemmes").ShowAsync();
-        //        }
-        //    }
-        //}
+        public void SaveMaterialeTyper(MaterialeTyper selectedMaterialeTyper)
+        {
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(ServerUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    string postBody = JsonConvert.SerializeObject(selectedMaterialeTyper);
+                    var response =
+                        client.PostAsync("api/MaterialeTyper",
+                            new StringContent(postBody, Encoding.UTF8, "application/json")).Result;
+                }
+                catch (Exception ex)
+                {
+
+                    new MessageDialog(ex.Message + "Der skete en fejl, da materiale typerne skulle gemmes").ShowAsync();
+                }
+            }
+        }
+
+        public void GemSkade(MonumentOversigt monumentOversigt, SkadeOversigt skadeOversigt)
+        {
+            var monumentBinding = new MonumentBinding
+            {
+               Navn = monumentOversigt.Navn,
+               Adresse =  monumentOversigt.Adresse,
+               PostNr =  monumentOversigt.PostNr,
+               Bevaringsværdi = monumentOversigt.Bevaringsværdi,
+               
+
+            };
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(ServerUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    string postBody = JsonConvert.SerializeObject(monumentBinding);
+                    var response =
+                        client.PostAsync("api/v2/opretskade",
+                            new StringContent(postBody, Encoding.UTF8, "application/json")).Result;
+                }
+                catch (Exception ex)
+                {
+
+                    new MessageDialog(ex.Message + "Der skete en fejl, da skaden skulle gemmes").ShowAsync();
+                }
+            }
+        }
+
     }
+
 }

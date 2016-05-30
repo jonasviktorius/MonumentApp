@@ -13,6 +13,8 @@ public class StaticObjects
         public static PlaceringsTyper SelectedPlaceringsTyper { get; set; } = new PlaceringsTyper(false, false, false);
         public static PlaceringsOversigt SelectedPlaceringsOversigt { get; set; } = new PlaceringsOversigt();
         public static MonumentTyper SelectedMonumentTyper { get; set; } = new MonumentTyper(false, false, false, false);
+        public static MonumentTypeOversigt SelectedMonumentTypeOversigt { get; set; } = new MonumentTypeOversigt();
         public static MaterialeTyper SelectedMaterialeTyper { get; set; } = new MaterialeTyper(false, false, false, false, false, false, false, false, false, false, false, false, false, false);
+        public static MaterialeOversigt SelectedMaterialeOversigt { get; set; } = new MaterialeOversigt();
     }
 }

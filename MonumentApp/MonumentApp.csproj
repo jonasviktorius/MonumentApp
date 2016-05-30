@@ -100,9 +100,11 @@
     <Compile Include="Handler\MonumentHandler.cs" />
     <Compile Include="Hjaelpeklasser\Navigate.cs" />
     <Compile Include="Model\Binding\MonumentBinding.cs" />
+    <Compile Include="Model\MaterialeOversigt.cs" />
     <Compile Include="Model\MaterialeTyper.cs" />
     <Compile Include="Model\MonumentOversigt.cs" />
     <Compile Include="Model\MonumentSingleton.cs" />
+    <Compile Include="Model\MonumentTypeOversigt.cs" />
     <Compile Include="Model\MonumentTyper.cs" />
     <Compile Include="Model\PlaceringsOversigt.cs" />
     <Compile Include="Model\PlaceringsTyper.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="Presentation\ShellViewModel.cs" />
     <Compile Include="ViewModel\MonumentViewModel.cs" />
     <Compile Include="ViewModel\OpretMonumentViewModel.cs" />
+    <Compile Include="ViewModel\OpretSkadeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

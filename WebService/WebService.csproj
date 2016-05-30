@@ -212,11 +212,13 @@
     </Compile>
     <Compile Include="MaterialeOversigt.cs" />
     <Compile Include="MaterialeTyper.cs" />
+    <Compile Include="MaterialeTyperBinding.cs" />
     <Compile Include="Models\Binding\MonumentBinding.cs" />
     <Compile Include="MonumentContext.cs" />
     <Compile Include="MonumentOversigt.cs" />
     <Compile Include="MonumentTypeOversigt.cs" />
     <Compile Include="MonumentTyper.cs" />
+    <Compile Include="MonumentTyperBinding.cs" />
     <Compile Include="PlaceringsOversigt.cs" />
     <Compile Include="PlaceringsTyper.cs" />
     <Compile Include="PlaceringsTyperBinding.cs" />
