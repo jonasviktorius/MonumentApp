@@ -12,5 +12,10 @@ namespace MonumentApp.Pages
         {
             this.InitializeComponent();
         }
+
+        private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -96,8 +96,27 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Monument.cs" />
-    <Compile Include="Model\Skade.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Handler\MonumentHandler.cs" />
+    <Compile Include="Hjaelpeklasser\Navigate.cs" />
+    <Compile Include="Model\Binding\MonumentBinding.cs" />
+    <Compile Include="Model\MaterialeOversigt.cs" />
+    <Compile Include="Model\MaterialeTyper.cs" />
+    <Compile Include="Model\MonumentOversigt.cs" />
+    <Compile Include="Model\MonumentSingleton.cs" />
+    <Compile Include="Model\MonumentTypeOversigt.cs" />
+    <Compile Include="Model\MonumentTyper.cs" />
+    <Compile Include="Model\PlaceringsOversigt.cs" />
+    <Compile Include="Model\PlaceringsTyper.cs" />
+    <Compile Include="Model\PostNr.cs" />
+    <Compile Include="Model\SkadeOversigt.cs" />
+    <Compile Include="Model\SkadeTyper.cs" />
+    <Compile Include="Model\StaticObjects.cs" />
+    <Compile Include="Pages\BehandlingsPage.xaml.cs">
+      <DependentUpon>BehandlingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Persistency\FacadeLag.cs" />
+    <Compile Include="Properties\Annotations1.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
@@ -120,6 +139,9 @@
     <Compile Include="Presentation\DisplayableTheme.cs" />
     <Compile Include="Presentation\SettingsViewModel.cs" />
     <Compile Include="Presentation\ShellViewModel.cs" />
+    <Compile Include="ViewModel\MonumentViewModel.cs" />
+    <Compile Include="ViewModel\OpretMonumentViewModel.cs" />
+    <Compile Include="ViewModel\OpretSkadeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -128,6 +150,7 @@
     <None Include="MonumentApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\lilleHavfrue.png" />
     <Content Include="Assets\little_mermaid_faded.png" />
     <Content Include="Pages\lilleHavfrue.png" />
     <Content Include="Pages\little_mermaid_faded.png" />
@@ -145,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\BehandlingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -176,7 +203,7 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModel\" />
+    <Folder Include="Controller\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -4,19 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonumentApp.Model
+namespace AndenMonumentApp.Model
 {
-    class Monument
+    public class Monument
     {
-        public string GlobalId { get; set; }
         public string Navn { get; set; }
         public string Adresse { get; set; }
-        public int PostNr { get; set; }
+        public int  PostNr { get; set; }
 
 
-        public Monument(string globalId, string navn, string adresse, int postNr)
+        public Monument()
         {
-            GlobalId = globalId;
+            
+        }
+
+        public Monument(string navn, string adresse, int postNr)
+        {
             Navn = navn;
             Adresse = adresse;
             PostNr = postNr;
@@ -24,7 +27,7 @@ namespace MonumentApp.Model
 
         public override string ToString()
         {
-            return $"GlobalId: {GlobalId}, Navn: {Navn}, Adresse: {Adresse}, PostNr: {PostNr}";
+            return $"Navn: {Navn}, Addresse: {Adresse}, PostNr: {PostNr}";
         }
     }
 }

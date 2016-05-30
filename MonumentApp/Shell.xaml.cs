@@ -16,9 +16,9 @@ namespace MonumentApp
             var vm = new ShellViewModel();
             vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Forside", PageType = typeof(WelcomePage) });
             vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Opret Monument", PageType = typeof(OpretMonumentPage) });
-            vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Monument", PageType = typeof(MonumentPage) });
+            vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Monument oversigt", PageType = typeof(MonumentPage) });
             vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Opret Skade", PageType = typeof(SkadePage) });
-
+            vm.TopItems.Add(new NavigationItem { Icon = "", DisplayName = "Behandling", PageType = typeof(BehandlingsPage) });
             vm.BottomItems.Add(new NavigationItem { Icon = "", DisplayName = "Indstillinger", PageType = typeof(SettingsPage) });
 
             // select the first top item

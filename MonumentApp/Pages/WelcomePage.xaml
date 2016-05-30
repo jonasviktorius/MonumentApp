@@ -17,7 +17,7 @@
 
     <Grid>
 
-        <ScrollViewer Padding="{x:Bind Frame.Padding, Mode=OneWay}"  Margin="-10,10,10,-10" ViewChanged="ScrollViewer_ViewChanged" Background="#FFD0DAC6">
+        <ScrollViewer Padding="{x:Bind Frame.Padding, Mode=OneWay}"  Margin="0" ViewChanged="ScrollViewer_ViewChanged" Background="#FFD0DAC6">
             <ScrollViewer.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFC0D4BB"/>
@@ -41,16 +41,16 @@
         <Image x:Name="little_mermaid_faded_png" Source="little_mermaid_faded.png" Stretch="Fill" Margin="0,-35,-22,0" HorizontalAlignment="Right" Width="330" Height="385" VerticalAlignment="Top"/>
 
 
-        <TextBox x:Name="SøgeBox" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="600" Height="50" FontSize="20"/>
+        <TextBox x:Name="SøgeBox" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="600" Height="50" FontSize="20" />
 
 
 
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Søg....." VerticalAlignment="Center" Margin="0,0,525,100" FontSize="24" FontStyle="Italic"/>
-        <Button x:Name="SøgeButton" Content="Søg" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="700,0,10,2" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="button" Content="Opret nyt monument" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="350,350,0,0" Height="70" FontSize="24">
+        <Button x:Name="SøgeButton" Content="Søg" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="700,0,10,2" FontSize="20" FontWeight="Bold" Click="SøgeButton_Click"/>
+        <Button x:Name="button" Content="Opret nyt Monument" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="450,350,0,0" Height="70" FontSize="24">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
-                    <Core:NavigateToPageAction TargetPage="MonumentApp.Pages.OpretMonumentPage"/>
+                    <Core:NavigateToPageAction TargetPage="MonumentOversigtApp.Pages.OpretMonumentOversigtPage"/>
                 </Core:EventTriggerBehavior>
             </Interactivity:Interaction.Behaviors>
         </Button>
