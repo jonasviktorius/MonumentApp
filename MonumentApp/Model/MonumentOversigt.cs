@@ -30,6 +30,15 @@ namespace MonumentApp.Model
             Note = note;
             Bevaringsværdi = bevaringsværdi;
          }
+
+        public static void CheckBevaringsværdi(string bevaringdværdi)
+        {
+            if (bevaringdværdi.Length == 0 || bevaringdværdi.Length > 1 || bevaringdværdi.Length < 1)
+            {
+                throw new Exception("bevaringdværdi er forkert");
+            }
+        }
+
         public override string ToString()
         {
             return $"Navn: {Navn}, Adresse: {Adresse}, PostNr: {PostNr}, Note: {Note}, Bevaringsværdig: {Bevaringsværdi}";
