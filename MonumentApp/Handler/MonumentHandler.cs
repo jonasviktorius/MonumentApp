@@ -24,7 +24,8 @@ namespace MonumentApp.Handler
         public void OpretMonument()
         {
            FacadeLag facade = new FacadeLag();
-           facade.SaveMonumentv2(StaticObjects.SelectedMonumenter, StaticObjects.SelectedPlaceringsTyper, StaticObjects.SelectedMonumentTyper, StaticObjects.SelectedMaterialeTyper);
+           facade.SaveMonumentv2(StaticObjects.SelectedMonumenter, StaticObjects.SelectedPlaceringsTyper,
+               StaticObjects.SelectedMonumentTyper, StaticObjects.SelectedMaterialeTyper);
         }
 
         //public void OpretSkade()

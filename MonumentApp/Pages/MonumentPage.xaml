@@ -80,7 +80,7 @@
                 <Button x:Name="OpdaterMonumentButton" Content="Opdater MonumentOversigt" VerticalAlignment="Top" Height="60" Width="200"  Margin="80,1265,0,0" FontSize="18.667"/>
                 <Image x:Name="little_mermaid_faded_png" Source="little_mermaid_faded.png" Stretch="Fill" Margin="0,-35,-22,0" HorizontalAlignment="Right" Width="330" Height="385" VerticalAlignment="Top"/>
                 <TextBlock x:Name="NoteBlock" HorizontalAlignment="Left" Margin="80,779,0,0" TextWrapping="Wrap" Text="Note" VerticalAlignment="Top" FontWeight="Bold"/>
-                <TextBox x:Name="NoteBoxMonument" Margin="80,820,400,170" TextWrapping="Wrap" Text="" Width="800" d:LayoutOverrides="TopPosition, BottomPosition"/>
+                <TextBox x:Name="NoteOpretMonument" Margin="80,820,400,170" TextWrapping="Wrap" Text="{Binding monumentOversigt.Note, Mode=TwoWay}" Width="800" d:LayoutOverrides="TopPosition, BottomPosition"/>
 
             </Grid>
 

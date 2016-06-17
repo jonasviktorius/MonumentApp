@@ -180,7 +180,7 @@ namespace MonumentApp.Persistency
                 catch (Exception ex)
                 {
 
-                    new MessageDialog(ex.Message + "Der var fejl ved at hente monumenterne");
+                    new MessageDialog(ex.Message + "Der var fejl ved at hente monumenterne" + ex.Message);
                 }
                 return null;
             }
